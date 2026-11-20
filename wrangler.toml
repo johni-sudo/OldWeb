@@ -15,7 +15,7 @@ compatibility_date = "2025-11-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "project-db"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "1be7e0a4-b28e-4865-9cb8-2918766587b0"
 migrations_dir = "migrations"
 
 [vars]
