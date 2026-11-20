@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Привилегии — PROJECT</title>
+  <meta name="description" content="Привилегии PROJECT: состав, срок и стоимость до покупки. Прозрачная заявка без автоматического списания и скрытых условий.">
+  <meta name="theme-color" content="#d7ebf5">
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="/privileges">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Привилегии — PROJECT">
+  <meta property="og:description" content="Понятный состав, срок и стоимость привилегий. Сравнение возможностей и заявка в личном кабинете.">
+  <meta property="og:image" content="/assets/images/og-cover.jpg">
+  <link rel="preload" href="/assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/cards.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+  <script type="module" src="/assets/js/app.js"></script>
+  <script type="module" src="/assets/js/privileges.js"></script>
+</head>
+<body data-page="privileges">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <site-header class="site-header-wrap"></site-header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="/">Главная</a>
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg>
+          <span>Привилегии</span>
+        </nav>
+        <div class="page-hero-grid">
+          <div>
+            <span class="eyebrow eyebrow-dot">Магазин проекта</span>
+            <h1>Привилегии<br><span class="text-gradient">без мелкого шрифта</span></h1>
+            <p class="page-hero-lead">
+              Каждый уровень поддержки описан заранее: возможности, срок и цена. Оформление создаёт
+              заявку в кабинете — деньги не списываются до подтверждения администратором.
+            </p>
+          </div>
+          <div class="page-hero-aside">
+            <div class="hero-stat-card">
+              <span class="stat-value" data-privilege-count>—</span>
+              <span class="stat-label">Уровней поддержки</span>
+            </div>
+            <a class="btn btn-glass btn-block" href="#comparison">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-sliders-horizontal"></use></svg>
+              Сравнить возможности
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" aria-labelledby="privileges-title">
+      <div class="container">
+        <div id="store-notice" class="notice notice-demo store-note">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-triangle-alert"></use></svg>
+          <span>Загружаем условия магазина…</span>
+        </div>
+
+        <div class="servers-result-line">
+          <span id="privileges-result" aria-live="polite">Загружаем привилегии…</span>
+          <span>Все цены указаны за полный срок</span>
+        </div>
+
+        <div class="privileges-grid" id="privileges-grid" aria-busy="true">
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+        </div>
+
+        <div class="store-process">
+          <div class="process-step">
+            <span class="process-step-index">01 / Выбор</span>
+            <h3>Изучите состав</h3>
+            <p>Сравните возможности и срок действия. Все условия опубликованы до оформления.</p>
+          </div>
+          <div class="process-step">
+            <span class="process-step-index">02 / Заявка</span>
+            <h3>Создайте заявку</h3>
+            <p>Заявка появится в кабинете. На этом этапе оплата ещё не производится.</p>
+          </div>
+          <div class="process-step">
+            <span class="process-step-index">03 / Подтверждение</span>
+            <h3>Свяжитесь с администрацией</h3>
+            <p>Администратор подтвердит состав и пришлёт актуальные реквизиты или счёт.</p>
+          </div>
+          <div class="process-step">
+            <span class="process-step-index">04 / Активация</span>
+            <h3>Получите доступ</h3>
+            <p>После подтверждения оплаты привилегия активируется и отображается в профиле.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line comparison-section" id="comparison" aria-labelledby="comparison-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">Сравнение</span>
+            <h2 class="section-title" id="comparison-title">Что входит в каждый уровень</h2>
+            <p class="section-lead">Одна таблица, без скрытых строк. Сравните привилегии перед оформлением заявки.</p>
+          </div>
+        </div>
+        <div class="comparison-wrap">
+          <table class="comparison-table" id="comparison-table">
+            <thead>
+              <tr>
+                <th scope="col">Возможности</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><div class="skeleton" style="height:18px;width:70%"></div></td></tr>
+              <tr><td><div class="skeleton" style="height:18px;width:55%"></div></td></tr>
+              <tr><td><div class="skeleton" style="height:18px;width:64%"></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-faint" style="margin-top:14px;font-size:10.5px">
+          «—» означает, что возможность не входит в уровень. Итоговый состав может быть уточнён администрацией до оплаты.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+
+  <dialog class="dialog dialog-lg store-purchase-dialog" id="purchase-dialog" aria-labelledby="purchase-title">
+    <div class="dialog-head">
+      <div>
+        <h2 id="purchase-title">Оформление заявки</h2>
+        <p>Проверьте состав и срок. Оплата на этом шаге не списывается.</p>
+      </div>
+      <button class="icon-btn dialog-close" type="button" data-dialog-close aria-label="Закрыть">
+        <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-x"></use></svg>
+      </button>
+    </div>
+    <div class="dialog-body" id="purchase-body">
+      <div class="loading-row"><span class="spinner spinner-dark" aria-hidden="true"></span> Подготовка…</div>
+    </div>
+  </dialog>
+</body>
+</html>

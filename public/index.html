@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PROJECT — игровое сообщество новой волны</title>
+  <meta name="description" content="PROJECT — пространство игровых серверов, привилегий и сообщества. Безопасный вход через Steam, прозрачные правила и аккуратный дизайн.">
+  <meta name="theme-color" content="#d7ebf5">
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PROJECT">
+  <meta property="og:title" content="PROJECT — игровое сообщество новой волны">
+  <meta property="og:description" content="Серверы, привилегии и сообщество в одном пространстве. Вход через официальный Steam OpenID.">
+  <meta property="og:image" content="/assets/images/og-cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="/assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/cards.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+  <link rel="stylesheet" href="/assets/css/home.css">
+  <script type="module" src="/assets/js/app.js"></script>
+  <script type="module" src="/assets/js/home.js"></script>
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <site-header class="site-header-wrap"></site-header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="hero-ribbon hero-ribbon-a" aria-hidden="true"></span>
+      <span class="hero-ribbon hero-ribbon-b" aria-hidden="true"></span>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="hero-kicker">
+            <span class="kicker-dot"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-waves"></use></svg></span>
+            Игровое сообщество нового поколения
+          </div>
+          <h1 id="hero-title">
+            <span class="line">Новая волна</span>
+            <span class="line"><span class="accent">твоего мира</span></span>
+          </h1>
+          <p class="hero-description">
+            Единое пространство для игровых серверов, привилегий и людей, с которыми хочется возвращаться.
+            Вход через Steam, честные правила и никаких лишних паролей.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="/servers">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-server"></use></svg>
+              Выбрать сервер
+            </a>
+            <a class="btn btn-glass btn-lg" href="/privileges">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-sparkles"></use></svg>
+              Смотреть привилегии
+            </a>
+          </div>
+          <div class="hero-metrics" aria-label="Статистика проекта">
+            <div class="hero-metric">
+              <span class="hero-metric-value" data-stat="servers">—</span>
+              <span class="hero-metric-label">Серверов</span>
+            </div>
+            <div class="hero-metric">
+              <span class="hero-metric-value" data-stat="playersOnline">—</span>
+              <span class="hero-metric-label">Игроков онлайн</span>
+            </div>
+            <div class="hero-metric">
+              <span class="hero-metric-value" data-stat="members">—</span>
+              <span class="hero-metric-label">Участников</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-halo">
+            <div class="hero-halo-img">
+              <img src="/assets/images/logo-mark.png" alt="" width="460" height="460">
+            </div>
+            <span class="halo-glint"></span>
+          </div>
+          <span class="orbit-chip orbit-chip-a">
+            <svg class="icon"><use href="/assets/icons.svg#i-steam-brand"></use></svg>
+            Steam OpenID
+          </span>
+          <span class="orbit-chip orbit-chip-b">
+            <svg class="icon"><use href="/assets/icons.svg#i-shield-check"></use></svg>
+            Защищённая сессия
+          </span>
+          <span class="orbit-chip orbit-chip-c">
+            <svg class="icon"><use href="/assets/icons.svg#i-users"></use></svg>
+            Сообщество
+          </span>
+          <div class="hero-live-card">
+            <div class="live-card-top">
+              <span>Сеть проекта</span>
+              <span class="status-dot status-dot-offline" data-network-dot></span>
+            </div>
+            <div class="live-card-number">
+              <strong data-stat="playersOnline">—</strong>
+              <span>игроков онлайн</span>
+            </div>
+            <div class="live-card-note">Только актуальные данные из каталога серверов. Без вымышленных чисел.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">Листайте вниз</div>
+      <svg class="hero-wave" viewBox="0 0 1440 190" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-40 122C210 30 402 92 607 121C828 153 1028 116 1480 22V190H-40Z" fill="rgba(255,255,255,.42)"/>
+        <path d="M-40 148C230 64 466 122 690 145C918 168 1128 138 1480 68V190H-40Z" fill="rgba(215,235,245,.74)"/>
+        <path d="M-40 176C260 108 520 154 754 176C1000 199 1210 166 1480 124V190H-40Z" fill="#f4fbfe"/>
+      </svg>
+    </section>
+
+    <section class="intro-strip" aria-label="Принципы проекта">
+      <div class="container intro-strip-inner">
+        <span class="intro-strip-label">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-waves"></use></svg>
+          Основа проекта
+        </span>
+        <div class="intro-strip-items">
+          <span class="intro-strip-item"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-shield-check"></use></svg> Официальные серверы</span>
+          <span class="intro-strip-item"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-steam-brand"></use></svg> Steam-профиль</span>
+          <span class="intro-strip-item"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-book-open"></use></svg> Прозрачные правила</span>
+          <span class="intro-strip-item"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-lock"></use></svg> Без паролей</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-sticky reveal">
+          <span class="eyebrow">О проекте</span>
+          <h2 class="about-title" id="about-title">Не просто набор серверов. <span class="text-gradient">Общее место силы.</span></h2>
+          <p class="about-lead">
+            PROJECT задуман как аккуратная экосистема: понятный вход, живые серверы, прозрачный магазин
+            и правила, которые действительно работают.
+          </p>
+          <a class="link-arrow" href="/rules">Познакомиться с правилами
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-right"></use></svg>
+          </a>
+        </div>
+        <div class="about-panel reveal" style="--delay:80ms">
+          <div class="about-panel-head">
+            <span class="about-panel-label">Манифест</span>
+            <span class="about-panel-index">01 / 03</span>
+          </div>
+          <div class="about-copy">
+            <p>
+              Мы верим, что игровое сообщество начинается с <strong>уважения к времени игрока</strong>.
+              Поэтому здесь нет навязчивых окон, бесконечных обещаний и цифр, которых не существует.
+            </p>
+            <p>
+              Вход устроен через официальный <strong>Steam OpenID</strong>: проект не запрашивает пароль
+              и не получает доступ к вашему аккаунту Valve. В кабинете видны только те данные, которые
+              действительно нужны для игры и покупок.
+            </p>
+            <p>
+              Всё остальное — серверы, привилегии, новости и правила — собрано в одном пространстве
+              и управляется из административной панели. Название, контент и цены легко заменить под
+              финальный бренд.
+            </p>
+          </div>
+          <div class="about-signature">
+            <span class="brand-mark"><img src="/assets/images/logo-mark.png" alt="" width="36" height="36"></span>
+            <span class="about-signature-text"><strong>Команда PROJECT</strong>Временное название · реальные данные подключаются в панели</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">Почему PROJECT</span>
+            <h2 class="section-title" id="features-title">Всё нужное. <br>Ничего лишнего.</h2>
+          </div>
+          <p class="section-lead reveal" style="--delay:60ms">
+            Мы убрали всё, что мешает начать играть, и оставили инструменты, которые делают сообщество удобнее.
+          </p>
+        </div>
+        <div class="features-grid">
+          <article class="feature-card reveal" data-number="01">
+            <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-user"></use></svg></span>
+            <h3>Один профиль</h3>
+            <p>Steam-аккаунт, никнейм и аватар подтягиваются автоматически. Никаких новых паролей и повторных регистраций.</p>
+          </article>
+          <article class="feature-card reveal" data-number="02" style="--delay:70ms">
+            <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-server"></use></svg></span>
+            <h3>Живой каталог</h3>
+            <p>Игра, адрес, статус и число игроков — в одной карточке. Данные обновляются из панели администратора.</p>
+          </article>
+          <article class="feature-card reveal" data-number="03" style="--delay:140ms">
+            <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-shield-check"></use></svg></span>
+            <h3>Честный магазин</h3>
+            <p>Состав привилегии, срок и цена видны до покупки. Заявка и оплата не смешиваются в одну кнопку.</p>
+          </article>
+          <article class="feature-card reveal" data-number="04" style="--delay:210ms">
+            <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-book-open"></use></svg></span>
+            <h3>Правила без сюрпризов</h3>
+            <p>Категории, поиск и печатная версия. Актуальные правила всегда под рукой — в одном разделе.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line" aria-labelledby="servers-preview-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">Игровые миры</span>
+            <h2 class="section-title" id="servers-preview-title">Выбери, где начать</h2>
+            <p class="section-lead">Каталог серверов с честным статусом и актуальным адресом подключения.</p>
+          </div>
+          <div class="section-head-aside reveal">
+            <a class="link-arrow" href="/servers">Все серверы
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+        <div class="preview-servers" id="home-servers">
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">Быстрый старт</span>
+            <h2 class="section-title" id="steps-title">Три шага до игры</h2>
+          </div>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card reveal">
+            <span class="step-number">01</span>
+            <h3>Войдите через Steam</h3>
+            <p>Подтвердите вход на официальной странице Valve. Мы получим только публичный профиль и SteamID64.</p>
+          </article>
+          <article class="step-card reveal" style="--delay:70ms">
+            <span class="step-number">02</span>
+            <h3>Найдите свой сервер</h3>
+            <p>Отфильтруйте каталог по игре и статусу. Адрес подключения копируется в один клик.</p>
+          </article>
+          <article class="step-card is-dark reveal" style="--delay:140ms">
+            <span class="step-number">03</span>
+            <h3>Подключайтесь и играйте</h3>
+            <p>Заходите в игру по скопированному адресу. Активные привилегии и история покупок — в кабинете.</p>
+            <a class="link-arrow" href="/account">Открыть кабинет
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-up-right"></use></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line" aria-labelledby="privileges-preview-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">Поддержка проекта</span>
+            <h2 class="section-title" id="privileges-preview-title">Привилегии, которые понятны</h2>
+            <p class="section-lead">Без скрытых условий: состав, срок и стоимость — до оформления заявки.</p>
+          </div>
+          <div class="section-head-aside reveal">
+            <a class="link-arrow" href="/privileges">Сравнить привилегии
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+        <div class="preview-privileges" id="home-privileges">
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-line" aria-labelledby="news-preview-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <span class="eyebrow">Журнал проекта</span>
+            <h2 class="section-title" id="news-preview-title">Последние новости</h2>
+          </div>
+          <div class="section-head-aside reveal">
+            <a class="link-arrow" href="/news">Все публикации
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-right"></use></svg>
+            </a>
+          </div>
+        </div>
+        <div class="preview-news" id="home-news">
+          <div class="skeleton skeleton-card" style="min-height:338px" aria-hidden="true"></div>
+          <div class="preview-news-side">
+            <div class="skeleton" style="min-height:160px" aria-hidden="true"></div>
+            <div class="skeleton" style="min-height:160px" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+        <div class="join-cta reveal">
+          <div class="join-cta-inner">
+            <div>
+              <span class="eyebrow eyebrow-dot">Присоединяйтесь</span>
+              <h2>Твой профиль уже готов. Остался один шаг.</h2>
+              <p>Войдите через Steam, выберите привилегию и начните играть. Все данные — в одном личном кабинете.</p>
+            </div>
+            <div class="join-cta-actions">
+              <a class="btn btn-primary" href="/account" data-join-button>
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-user"></use></svg>
+                Открыть личный кабинет
+              </a>
+              <a class="btn btn-glass" href="/rules">Правила проекта</a>
+            </div>
+          </div>
+          <span class="join-cta-orbit" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Серверы — PROJECT</title>
+  <meta name="description" content="Каталог игровых серверов PROJECT: игра, описание, IP-адрес, статус, онлайн и подключение в один клик.">
+  <meta name="theme-color" content="#d7ebf5">
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="/servers">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Серверы — PROJECT">
+  <meta property="og:description" content="Выберите игровой сервер, скопируйте адрес и подключайтесь.">
+  <meta property="og:image" content="/assets/images/og-cover.jpg">
+  <link rel="preload" href="/assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/cards.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+  <script type="module" src="/assets/js/app.js"></script>
+  <script type="module" src="/assets/js/servers.js"></script>
+</head>
+<body data-page="servers">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <site-header class="site-header-wrap"></site-header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="/">Главная</a>
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg>
+          <span>Серверы</span>
+        </nav>
+        <div class="page-hero-grid">
+          <div>
+            <span class="eyebrow eyebrow-dot">Игровые миры</span>
+            <h1>Серверы<br><span class="text-gradient">PROJECT</span></h1>
+            <p class="page-hero-lead">
+              Каталог официальных игровых миров. Статус, число игроков и адрес подключения
+              обновляются администрацией — без случайных цифр и фальшивого онлайна.
+            </p>
+          </div>
+          <div class="page-hero-aside">
+            <div class="hero-stat-card">
+              <span class="stat-value" data-server-stat="total">—</span>
+              <span class="stat-label">Серверов в каталоге</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" data-server-stat="online">—</span>
+              <span class="stat-label">Сейчас в сети</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" aria-labelledby="server-catalog-title">
+      <div class="container">
+        <div class="servers-summary">
+          <div class="summary-card">
+            <div class="summary-card-top">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-server"></use></svg>
+              Всего серверов
+            </div>
+            <strong class="summary-card-value" data-server-stat="total">—</strong>
+            <span class="summary-card-note">Опубликовано в каталоге</span>
+          </div>
+          <div class="summary-card">
+            <div class="summary-card-top">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-activity"></use></svg>
+              Онлайн
+            </div>
+            <strong class="summary-card-value" data-server-stat="online">—</strong>
+            <span class="summary-card-note">Серверов со статусом «В сети»</span>
+          </div>
+          <div class="summary-card">
+            <div class="summary-card-top">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-users"></use></svg>
+              Игроков сейчас
+            </div>
+            <strong class="summary-card-value" data-server-stat="players">—</strong>
+            <span class="summary-card-note">Суммарно по серверам в сети</span>
+          </div>
+        </div>
+
+        <div class="toolbar servers-toolbar" role="search">
+          <div class="toolbar-group">
+            <label class="sr-only" for="server-search">Поиск сервера</label>
+            <div class="input-wrap">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-search"></use></svg>
+              <input class="input search-input" id="server-search" type="search" placeholder="Название, игра или описание…" autocomplete="off">
+            </div>
+            <label class="sr-only" for="server-game">Игра</label>
+            <select class="select" id="server-game">
+              <option value="">Все игры</option>
+            </select>
+          </div>
+          <div class="toolbar-group" id="status-filters" role="group" aria-label="Фильтр по статусу">
+            <button class="filter-chip is-active" type="button" data-status-filter="all">Все</button>
+            <button class="filter-chip" type="button" data-status-filter="online">В сети</button>
+            <button class="filter-chip" type="button" data-status-filter="offline">Офлайн</button>
+            <button class="filter-chip" type="button" data-status-filter="maintenance">Тех. работы</button>
+          </div>
+        </div>
+
+        <div class="servers-result-line">
+          <span id="servers-result" aria-live="polite">Загружаем каталог…</span>
+          <span>Статус обновляется администрацией</span>
+        </div>
+
+        <div class="servers-grid" id="servers-grid" aria-busy="true">
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+        </div>
+
+        <div class="servers-help">
+          <div class="help-step">
+            <span class="help-step-index">01</span>
+            <div>
+              <h3>Скопируйте адрес</h3>
+              <p>Нажмите «Подключиться» или иконку копирования рядом с IP-адресом сервера.</p>
+            </div>
+          </div>
+          <div class="help-step">
+            <span class="help-step-index">02</span>
+            <div>
+              <h3>Откройте игру</h3>
+              <p>Запустите нужную игру и найдите раздел подключения к серверу по адресу.</p>
+            </div>
+          </div>
+          <div class="help-step">
+            <span class="help-step-index">03</span>
+            <div>
+              <h3>Вставьте адрес</h3>
+              <p>Вставьте скопированный адрес в поле подключения. Если не получается — проверьте правила сервера.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

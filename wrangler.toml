@@ -1,0 +1,23 @@
+# Cloudflare Pages project configuration.
+# 1. Create a D1 database:  npx wrangler d1 create project-db
+# 2. Replace the placeholder database_id below with the returned UUID.
+# 3. Apply migrations:      npm run db:migrate:remote
+# 4. Add secrets (not in this file):
+#      npx wrangler pages secret put STEAM_API_KEY --project-name project-site
+#      npx wrangler pages secret put ADMIN_STEAM_IDS --project-name project-site
+#      npx wrangler pages secret put SESSION_SALT --project-name project-site
+#      npx wrangler pages secret put SITE_ORIGIN --project-name project-site
+
+name = "project-site"
+pages_build_output_dir = "./public"
+compatibility_date = "2025-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "project-db"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[vars]
+# Public, non-secret settings live in the D1 `settings` table and are edited
+# from /admin. Keep secrets out of [vars].

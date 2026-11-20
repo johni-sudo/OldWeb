@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d7ebf5"/><stop offset=".48" stop-color="#b3e5f2"/><stop offset="1" stop-color="#aee8e1"/></linearGradient>
+  <linearGradient id="ice" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset="1" stop-color="#c6eef7" stop-opacity=".25"/></linearGradient>
+  <linearGradient id="deep" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a749c"/><stop offset="1" stop-color="#1b3b5a"/></linearGradient>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7dc8eb"/><stop offset="1" stop-color="#8cd3f2"/></linearGradient>
+  <linearGradient id="mint" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9ce0d8"/><stop offset="1" stop-color="#aee8e1"/></linearGradient>
+  <radialGradient id="glow" cx=".5" cy=".45" r=".55"><stop offset="0" stop-color="#ffffff" stop-opacity=".8"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+  <filter id="blur"><feGaussianBlur stdDeviation="28"/></filter>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+
+<circle cx="1000" cy="140" r="280" fill="url(#glow)" filter="url(#blur)"/>
+<g transform="translate(916 334)">
+<circle r="234" fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-width="1"/>
+<circle r="196" fill="none" stroke="#ffffff" stroke-opacity=".32" stroke-width="1" stroke-dasharray="4 12"/>
+<path d="M0 -150L110 -108V14C110 92 62 146 0 178C-62 146 -110 92 -110 14V-108Z" fill="url(#ice)" opacity=".82" stroke="#ffffff" stroke-width="2"/>
+<path d="M-48 8L-9 47L56 -31" fill="none" stroke="#1b3b5a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="-134" cy="-150" r="7" fill="#9ce0d8"/><circle cx="166" cy="106" r="5" fill="#ffffff"/>
+</g>
+<g font-family="Arial, sans-serif" fill="#1b3b5a">
+<text x="105" y="242" font-size="24" letter-spacing="8" opacity=".72">PROJECT / SAFETY</text>
+<text x="100" y="344" font-size="82" font-weight="700" letter-spacing="-2">БЕЗОПАСНОСТЬ</text>
+<text x="105" y="394" font-size="25" opacity=".68">Steam OpenID. Без паролей и лишних данных.</text>
+</g>
+<rect x="105" y="456" width="178" height="46" rx="23" fill="#ffffff" opacity=".45"/>
+<text x="133" y="486" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#1b3b5a" letter-spacing="2">STEAM OPENID</text>
+<path d="M-80 618C142 532 352 592 558 642C756 690 958 650 1140 570C1200 544 1250 542 1300 552V720H-80Z" fill="#7dc8eb" opacity=".38"/>
+
+<rect width="1200" height="675" fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="2"/>
+</svg>

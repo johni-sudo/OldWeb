@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Админ-панель — PROJECT</title>
+  <meta name="description" content="Административная панель PROJECT.">
+  <meta name="theme-color" content="#1b3b5a">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/cards.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+  <link rel="stylesheet" href="/assets/css/admin.css">
+  <script type="module" src="/assets/js/app.js"></script>
+  <script type="module" src="/assets/js/admin.js"></script>
+</head>
+<body data-page="admin" class="admin-body">
+  <a class="skip-link" href="#admin-content">Перейти к содержимому</a>
+
+  <section class="admin-gate" id="admin-gate">
+    <div class="admin-gate-bg" aria-hidden="true"></div>
+    <div class="admin-gate-card">
+      <div class="auth-gate-logo"><img src="/assets/images/logo-mark.png" alt="" width="88" height="88"></div>
+      <span class="eyebrow eyebrow-dot" style="justify-content:center">Администрирование</span>
+      <h1 id="admin-gate-title">Проверяем доступ…</h1>
+      <p id="admin-gate-text">Сейчас мы проверим вашу Steam-сессию и права администратора.</p>
+      <div class="auth-gate-actions" id="admin-gate-actions" hidden>
+        <a class="btn btn-steam" id="admin-gate-login" href="/api/auth/steam/login?return_to=%2Fadmin.html" data-steam-login>
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-steam-brand"></use></svg>
+          Войти через Steam
+        </a>
+        <a class="btn btn-glass" href="/">Вернуться на сайт</a>
+      </div>
+      <div id="admin-gate-notice"></div>
+    </div>
+  </section>
+
+  <div class="admin-shell" id="admin-shell" hidden>
+    <aside class="admin-sidebar" id="admin-sidebar">
+      <div class="admin-sidebar-head">
+        <a class="brand" href="/">
+          <span class="brand-mark"><img src="/assets/images/logo-mark.png" alt="" width="43" height="43"></span>
+          <span class="brand-text">
+            <span class="brand-name" data-project-name>PROJECT</span>
+            <span class="brand-sub">Control room</span>
+          </span>
+        </a>
+        <button class="admin-sidebar-close" type="button" data-admin-menu-toggle aria-label="Закрыть меню">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-x"></use></svg>
+        </button>
+      </div>
+
+      <div class="admin-sidebar-label">Управление</div>
+      <nav class="admin-nav" aria-label="Разделы админ-панели">
+        <button type="button" data-admin-view="overview" class="admin-nav-link is-active">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-layout-dashboard"></use></svg>
+          Обзор
+        </button>
+        <button type="button" data-admin-view="servers" class="admin-nav-link">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-server"></use></svg>
+          Серверы
+        </button>
+        <button type="button" data-admin-view="privileges" class="admin-nav-link">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-crown"></use></svg>
+          Привилегии
+        </button>
+        <button type="button" data-admin-view="news" class="admin-nav-link">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-newspaper"></use></svg>
+          Новости
+        </button>
+        <button type="button" data-admin-view="rules" class="admin-nav-link">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-book-open"></use></svg>
+          Правила
+        </button>
+        <button type="button" data-admin-view="users" class="admin-nav-link">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-users"></use></svg>
+          Пользователи
+        </button>
+        <button type="button" data-admin-view="purchases" class="admin-nav-link">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-shopping-bag"></use></svg>
+          Покупки
+          <span class="admin-nav-badge" id="admin-pending-badge" hidden>0</span>
+        </button>
+        <button type="button" data-admin-view="settings" class="admin-nav-link">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-settings"></use></svg>
+          Настройки
+        </button>
+      </nav>
+
+      <div class="admin-sidebar-foot">
+        <div class="admin-actor">
+          <img class="avatar" id="admin-avatar" src="/assets/images/avatar-fallback.jpg" alt="" data-fallback="/assets/images/avatar-fallback.jpg">
+          <div class="admin-actor-text">
+            <strong id="admin-persona">Администратор</strong>
+            <span>Steam ID подтверждён</span>
+          </div>
+        </div>
+        <a class="admin-side-link" href="/">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-up-right"></use></svg>
+          Открыть сайт
+        </a>
+        <button class="admin-side-link" type="button" data-logout>
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-log-out"></use></svg>
+          Выйти
+        </button>
+      </div>
+    </aside>
+
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <button class="icon-btn admin-menu-btn" type="button" data-admin-menu-toggle aria-label="Открыть меню">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-menu"></use></svg>
+          </button>
+          <div>
+            <span class="admin-topbar-eyebrow">PROJECT / CONTROL ROOM</span>
+            <h1 id="admin-view-title">Обзор проекта</h1>
+          </div>
+        </div>
+        <div class="admin-topbar-right">
+          <span class="admin-save-state" id="admin-save-state">
+            <span class="status-dot status-dot-online"></span>
+            Серверная проверка доступа
+          </span>
+          <button class="icon-btn" type="button" id="admin-refresh" title="Обновить данные" aria-label="Обновить данные">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-refresh-cw"></use></svg>
+          </button>
+        </div>
+      </header>
+
+      <main class="admin-content" id="admin-content">
+        <section class="admin-panel is-active" data-panel="overview" aria-labelledby="admin-view-title">
+          <div class="admin-content-head">
+            <div>
+              <span class="eyebrow eyebrow-dot">Сводка</span>
+              <h2>Всё под контролем</h2>
+              <p>Ключевые показатели проекта и последние действия. Данные берутся напрямую из D1.</p>
+            </div>
+            <div class="admin-head-actions">
+              <button class="btn btn-soft btn-sm" type="button" data-admin-quick="servers">Добавить сервер</button>
+              <button class="btn btn-primary btn-sm" type="button" data-admin-quick="news">Новая публикация</button>
+            </div>
+          </div>
+          <div id="overview-content">
+            <div class="admin-metrics">
+              <div class="admin-metric skeleton" style="min-height:142px"></div>
+              <div class="admin-metric skeleton" style="min-height:142px"></div>
+              <div class="admin-metric skeleton" style="min-height:142px"></div>
+              <div class="admin-metric skeleton" style="min-height:142px"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-panel" data-panel="servers" hidden>
+          <div class="admin-content-head">
+            <div>
+              <span class="eyebrow eyebrow-dot">Каталог</span>
+              <h2>Игровые серверы</h2>
+              <p>Добавляйте реальные адреса, вручную обновляйте статус и число игроков.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" type="button" id="add-server">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-plus"></use></svg>
+              Добавить сервер
+            </button>
+          </div>
+          <div id="servers-panel"><div class="admin-loading"><span class="spinner spinner-dark"></span> Загружаем серверы…</div></div>
+        </section>
+
+        <section class="admin-panel" data-panel="privileges" hidden>
+          <div class="admin-content-head">
+            <div>
+              <span class="eyebrow eyebrow-dot">Магазин</span>
+              <h2>Привилегии и цены</h2>
+              <p>Управляйте составом, сроками и стоимостью. Изменения сразу видны на сайте.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" type="button" id="add-privilege">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-plus"></use></svg>
+              Добавить привилегию
+            </button>
+          </div>
+          <div id="privileges-panel"><div class="admin-loading"><span class="spinner spinner-dark"></span> Загружаем привилегии…</div></div>
+        </section>
+
+        <section class="admin-panel" data-panel="news" hidden>
+          <div class="admin-content-head">
+            <div>
+              <span class="eyebrow eyebrow-dot">Контент</span>
+              <h2>Новости проекта</h2>
+              <p>Публикуйте обновления с обложкой, лидом и полным текстом в Markdown.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" type="button" id="add-news">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-plus"></use></svg>
+              Новая публикация
+            </button>
+          </div>
+          <div id="news-panel"><div class="admin-loading"><span class="spinner spinner-dark"></span> Загружаем новости…</div></div>
+        </section>
+
+        <section class="admin-panel" data-panel="rules" hidden>
+          <div class="admin-content-head">
+            <div>
+              <span class="eyebrow eyebrow-dot">Контент</span>
+              <h2>Правила сообщества</h2>
+              <p>Категории, порядок и текст. Пустые или снятые с публикации пункты не видны игрокам.</p>
+            </div>
+            <button class="btn btn-primary btn-sm" type="button" id="add-rule">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-plus"></use></svg>
+              Добавить пункт
+            </button>
+          </div>
+          <div id="rules-panel"><div class="admin-loading"><span class="spinner spinner-dark"></span> Загружаем правила…</div></div>
+        </section>
+
+        <section class="admin-panel" data-panel="users" hidden>
+          <div class="admin-content-head">
+            <div>
+              <span class="eyebrow eyebrow-dot">Комьюнити</span>
+              <h2>Пользователи</h2>
+              <p>Аккаунты создаются автоматически при первом входе через Steam.</p>
+            </div>
+            <div class="admin-search">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-search"></use></svg>
+              <input class="input" id="user-search" type="search" placeholder="Никнейм или SteamID64…" autocomplete="off">
+            </div>
+          </div>
+          <div id="users-panel"><div class="admin-loading"><span class="spinner spinner-dark"></span> Загружаем пользователей…</div></div>
+        </section>
+
+        <section class="admin-panel" data-panel="purchases" hidden>
+          <div class="admin-content-head">
+            <div>
+              <span class="eyebrow eyebrow-dot">Заявки</span>
+              <h2>Покупки и заявки</h2>
+              <p>Оплата подтверждается вручную после получения средств. Автоматического списания нет.</p>
+            </div>
+            <div class="admin-search admin-filter-select">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-filter"></use></svg>
+              <select class="select" id="purchase-filter" aria-label="Фильтр по статусу">
+                <option value="all">Все статусы</option>
+                <option value="pending">Ожидают</option>
+                <option value="paid">Оплачены</option>
+                <option value="cancelled">Отменены</option>
+                <option value="refunded">Возвраты</option>
+              </select>
+            </div>
+          </div>
+          <div class="notice notice-demo" style="margin-bottom:18px">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-shield-check"></use></svg>
+            <span><strong>Важно:</strong> статус «Оплачено» выставляется только после фактического получения оплаты. Сайт не имитирует платёж и не хранит платёжные данные.</span>
+          </div>
+          <div id="purchases-panel"><div class="admin-loading"><span class="spinner spinner-dark"></span> Загружаем заявки…</div></div>
+        </section>
+
+        <section class="admin-panel" data-panel="settings" hidden>
+          <div class="admin-content-head">
+            <div>
+              <span class="eyebrow eyebrow-dot">Конфигурация</span>
+              <h2>Настройки сайта</h2>
+              <p>Название проекта, поддержка и условия магазина. Секреты Cloudflare задаются отдельно.</p>
+            </div>
+          </div>
+          <div id="settings-panel"><div class="admin-loading"><span class="spinner spinner-dark"></span> Загружаем настройки…</div></div>
+        </section>
+      </main>
+    </div>
+    <div class="admin-overlay" id="admin-overlay" hidden></div>
+  </div>
+
+  <dialog class="dialog admin-dialog" id="admin-dialog" aria-labelledby="admin-dialog-title">
+    <div class="dialog-head">
+      <div>
+        <h2 id="admin-dialog-title">Редактирование</h2>
+        <p id="admin-dialog-subtitle"></p>
+      </div>
+      <button class="icon-btn dialog-close" type="button" data-dialog-close aria-label="Закрыть">
+        <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-x"></use></svg>
+      </button>
+    </div>
+    <div class="dialog-body" id="admin-dialog-body"></div>
+  </dialog>
+
+  <dialog class="dialog admin-confirm-dialog" id="confirm-dialog" aria-labelledby="confirm-title">
+    <div class="dialog-head">
+      <div>
+        <h2 id="confirm-title">Подтвердите действие</h2>
+        <p id="confirm-text">Это действие нельзя отменить.</p>
+      </div>
+    </div>
+    <div class="dialog-foot">
+      <button class="btn btn-ghost" type="button" id="confirm-cancel">Отмена</button>
+      <button class="btn btn-primary" type="button" id="confirm-ok">Подтвердить</button>
+    </div>
+  </dialog>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Новости — PROJECT</title>
+  <meta name="description" content="Новости и обновления PROJECT: запуск, изменения серверов, магазин и безопасность аккаунта.">
+  <meta name="theme-color" content="#d7ebf5">
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="/news">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Новости — PROJECT">
+  <meta property="og:description" content="Обновления серверов, магазина и сообщества PROJECT.">
+  <meta property="og:image" content="/assets/images/og-cover.jpg">
+  <link rel="preload" href="/assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/cards.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+  <script type="module" src="/assets/js/app.js"></script>
+  <script type="module" src="/assets/js/news.js"></script>
+</head>
+<body data-page="news">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <site-header class="site-header-wrap"></site-header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="/">Главная</a>
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg>
+          <span>Новости</span>
+        </nav>
+        <div class="page-hero-grid">
+          <div>
+            <span class="eyebrow eyebrow-dot">Журнал проекта</span>
+            <h1>Новости<br><span class="text-gradient">и обновления</span></h1>
+            <p class="page-hero-lead">
+              Запуск серверов, изменения в магазине, важные объявления и заметки о безопасности.
+              Только то, что действительно влияет на игру.
+            </p>
+          </div>
+          <div class="page-hero-aside">
+            <div class="hero-stat-card">
+              <span class="stat-value" data-news-count>—</span>
+              <span class="stat-label">Публикаций</span>
+            </div>
+            <a class="btn btn-glass btn-block" href="/rules">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-book-open"></use></svg>
+              Правила проекта
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" aria-labelledby="news-title">
+      <div class="container">
+        <div class="news-page-head">
+          <div>
+            <span class="eyebrow">Свежее</span>
+            <h2 class="section-title" id="news-title">Последние публикации</h2>
+          </div>
+          <span class="news-page-count" id="news-count-label" aria-live="polite">Загружаем…</span>
+        </div>
+
+        <div class="news-featured" id="news-featured">
+          <div class="skeleton skeleton-card" style="min-height:338px" aria-hidden="true"></div>
+        </div>
+        <div class="news-grid" id="news-grid" aria-busy="true">
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+          <div class="skeleton skeleton-card" aria-hidden="true"></div>
+        </div>
+        <div class="news-load-wrap">
+          <button class="btn btn-glass" type="button" id="news-load-more" hidden>
+            Показать ещё
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-down"></use></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

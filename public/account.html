@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Личный кабинет — PROJECT</title>
+  <meta name="description" content="Личный кабинет PROJECT: Steam-профиль, активные привилегии, история заявок и безопасность аккаунта.">
+  <meta name="theme-color" content="#d7ebf5">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" href="/assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/cards.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+  <script type="module" src="/assets/js/app.js"></script>
+  <script type="module" src="/assets/js/account.js"></script>
+</head>
+<body data-page="account">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <site-header class="site-header-wrap"></site-header>
+
+  <main id="main">
+    <section class="auth-gate" id="auth-gate">
+      <div class="container">
+        <div class="auth-gate-card">
+          <div class="auth-gate-logo"><img src="/assets/images/logo-mark.png" alt="" width="88" height="88"></div>
+          <span class="eyebrow eyebrow-dot" style="justify-content:center">Личный кабинет</span>
+          <h1 id="auth-gate-title">Проверяем сессию…</h1>
+          <p id="auth-gate-text">Сейчас мы проверим, авторизованы ли вы через Steam.</p>
+          <div class="auth-gate-actions" id="auth-gate-actions" hidden>
+            <a class="btn btn-steam" id="auth-gate-login" href="/api/auth/steam/login?return_to=%2Faccount.html" data-steam-login>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-steam-brand"></use></svg>
+              Войти через Steam
+            </a>
+            <a class="btn btn-glass" href="/servers">Сначала посмотреть серверы</a>
+          </div>
+          <div id="auth-gate-notice"></div>
+          <div class="auth-gate-note">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-shield-check"></use></svg>
+            <span>Проект не запрашивает и не хранит пароль Steam. Вход подтверждается на официальной странице Valve, а сессия хранится в защищённой HttpOnly-cookie.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="account-page" id="account-content" hidden>
+      <div class="container">
+        <div class="profile-hero">
+          <div class="profile-inner">
+            <div class="profile-avatar-wrap">
+              <img class="profile-avatar" id="profile-avatar" src="/assets/images/avatar-fallback.jpg" alt="" width="124" height="124" data-fallback="/assets/images/avatar-fallback.jpg">
+              <span class="profile-avatar-badge" title="Steam OpenID">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-steam-brand"></use></svg>
+              </span>
+            </div>
+            <div class="profile-main">
+              <div class="profile-name-row">
+                <h1 id="profile-name">Игрок</h1>
+                <span class="badge badge-online" id="profile-role">Steam</span>
+              </div>
+              <div class="profile-steam-id">
+                <span>SteamID64:</span>
+                <code id="profile-steamid">—</code>
+                <button class="copy-btn" type="button" id="copy-steamid" aria-label="Скопировать SteamID64" title="Скопировать SteamID64">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-copy"></use></svg>
+                </button>
+              </div>
+              <div class="profile-meta">
+                <span><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-calendar-days"></use></svg>В проекте с <span id="profile-created">—</span></span>
+                <span><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-activity"></use></svg>Последний вход <span id="profile-last-login">—</span></span>
+              </div>
+            </div>
+            <div class="profile-actions">
+              <a class="btn btn-glass btn-sm" id="profile-steam-link" href="#" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-external-link"></use></svg>
+                Steam-профиль
+              </a>
+              <button class="btn btn-ghost btn-sm" type="button" data-logout>
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-log-out"></use></svg>
+                Выйти
+              </button>
+            </div>
+          </div>
+          <div class="profile-stats">
+            <div class="profile-stat">
+              <strong id="profile-stat-active">0</strong>
+              <span>Активных привилегий</span>
+            </div>
+            <div class="profile-stat">
+              <strong id="profile-stat-purchases">0</strong>
+              <span>Всего заявок</span>
+            </div>
+            <div class="profile-stat">
+              <strong id="profile-stat-pending">0</strong>
+              <span>Ожидают подтверждения</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="account-layout">
+          <div class="account-main">
+            <section class="account-panel" id="active-privileges" aria-labelledby="active-title">
+              <div class="account-panel-head">
+                <h2 id="active-title">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-crown"></use></svg>
+                  Активные привилегии
+                </h2>
+                <span id="active-count-label">—</span>
+              </div>
+              <div id="active-privileges-list">
+                <div class="account-empty"><span class="spinner spinner-dark" aria-hidden="true"></span></div>
+              </div>
+            </section>
+
+            <section class="account-panel" id="purchases" aria-labelledby="purchases-title">
+              <div class="account-panel-head">
+                <h2 id="purchases-title">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-shopping-bag"></use></svg>
+                  История заявок
+                </h2>
+                <span id="purchases-count-label">—</span>
+              </div>
+              <div id="purchases-list">
+                <div class="account-empty"><span class="spinner spinner-dark" aria-hidden="true"></span></div>
+              </div>
+            </section>
+
+            <section class="account-panel" id="settings" aria-labelledby="settings-title">
+              <div class="account-panel-head">
+                <h2 id="settings-title">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-sliders-horizontal"></use></svg>
+                  Настройки интерфейса
+                </h2>
+                <span>Сохраняются в аккаунте</span>
+              </div>
+              <form id="account-settings-form">
+                <div class="settings-list">
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <strong>Компактный интерфейс</strong>
+                      <span>Меньше отступов в списках и карточках на этом устройстве.</span>
+                    </div>
+                    <label class="switch">
+                      <input type="checkbox" name="compactUi">
+                      <span class="switch-track"></span>
+                      <span class="sr-only">Включить компактный интерфейс</span>
+                    </label>
+                  </div>
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <strong>Уменьшить анимации</strong>
+                      <span>Отключает плавные переходы и фоновые движения.</span>
+                    </div>
+                    <label class="switch">
+                      <input type="checkbox" name="reduceMotion">
+                      <span class="switch-track"></span>
+                      <span class="sr-only">Уменьшить анимации</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="field-row" style="justify-content:flex-end;margin-top:18px">
+                  <button class="btn btn-primary btn-sm" type="submit" id="settings-save">Сохранить настройки</button>
+                </div>
+              </form>
+            </section>
+          </div>
+
+          <aside class="account-side">
+            <section class="account-side-card" aria-labelledby="sessions-title">
+              <h3 id="sessions-title">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-lock"></use></svg>
+                Безопасность сессий
+              </h3>
+              <div class="session-list" id="session-list">
+                <div class="account-empty"><span class="spinner spinner-dark" aria-hidden="true"></span></div>
+              </div>
+              <button class="btn btn-ghost btn-sm btn-block" type="button" id="revoke-sessions" style="margin-top:12px">
+                Завершить другие сессии
+              </button>
+              <p class="account-side-note">Текущая сессия останется активной. Выйти полностью можно кнопкой «Выйти».</p>
+            </section>
+
+            <div class="account-help" id="account-help">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-circle-help"></use></svg>
+              <h3>Нужна помощь?</h3>
+              <p id="account-help-text">Вопросы по заявкам, привилегиям и блокировкам решаются через официальный канал поддержки проекта.</p>
+              <a class="btn btn-mint btn-sm" id="account-support-link" href="/rules" hidden>Связаться с администрацией</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

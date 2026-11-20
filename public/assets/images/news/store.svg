@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d7ebf5"/><stop offset=".48" stop-color="#b3e5f2"/><stop offset="1" stop-color="#aee8e1"/></linearGradient>
+  <linearGradient id="ice" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".95"/><stop offset="1" stop-color="#c6eef7" stop-opacity=".25"/></linearGradient>
+  <linearGradient id="deep" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a749c"/><stop offset="1" stop-color="#1b3b5a"/></linearGradient>
+  <linearGradient id="sky" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7dc8eb"/><stop offset="1" stop-color="#8cd3f2"/></linearGradient>
+  <linearGradient id="mint" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9ce0d8"/><stop offset="1" stop-color="#aee8e1"/></linearGradient>
+  <radialGradient id="glow" cx=".5" cy=".45" r=".55"><stop offset="0" stop-color="#ffffff" stop-opacity=".8"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+  <filter id="blur"><feGaussianBlur stdDeviation="28"/></filter>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+
+<rect width="1200" height="675" fill="#1b3b5a" opacity=".08"/>
+<circle cx="900" cy="322" r="360" fill="url(#glow)" filter="url(#blur)"/>
+<g transform="translate(908 318)">
+<circle r="218" fill="none" stroke="#ffffff" stroke-opacity=".3" stroke-width="1.5"/>
+<circle r="168" fill="none" stroke="#ffffff" stroke-opacity=".55" stroke-width="2"/>
+<circle r="118" fill="url(#ice)" opacity=".8"/>
+<path d="M-132 9C-105 -35 -68 -35 -41 9C-14 53 23 53 50 9C77 -35 114 -35 141 9" fill="none" stroke="#1b3b5a" stroke-opacity=".65" stroke-width="6" stroke-linecap="round"/>
+<path d="M-132 59C-105 15 -68 15 -41 59C-14 103 23 103 50 59C77 15 114 15 141 59" fill="none" stroke="#5ea8ce" stroke-opacity=".8" stroke-width="3" stroke-linecap="round"/>
+<circle cx="207" cy="-105" r="9" fill="#ffffff"/><circle cx="-204" cy="98" r="6" fill="#ffffff" opacity=".7"/>
+</g>
+<g font-family="Arial, sans-serif" fill="#1b3b5a">
+<text x="105" y="245" font-size="24" letter-spacing="8" opacity=".72">PROJECT / STORE</text>
+<text x="100" y="348" font-size="86" font-weight="700" letter-spacing="-2">ПРИВИЛЕГИИ</text>
+<text x="105" y="398" font-size="25" opacity=".68">Прозрачно. Без подписок по умолчанию.</text>
+</g>
+<path d="M105 460h255" stroke="#1b3b5a" stroke-opacity=".22" stroke-width="2"/>
+<g transform="translate(105 502)" fill="#1b3b5a" opacity=".72" font-family="Arial, sans-serif" font-size="18" letter-spacing="3">
+<text>01 / ВЫБОР</text><text x="154">02 / ЗАЯВКА</text><text x="330">03 / ДОСТУП</text>
+</g>
+<path d="M-100 592C160 474 412 570 606 628C786 682 986 636 1160 546C1220 516 1260 512 1300 522V720H-100Z" fill="#aee8e1" opacity=".45"/>
+
+<rect width="1200" height="675" fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="2"/>
+</svg>

@@ -1,0 +1,31 @@
+{
+  "name": "PROJECT",
+  "short_name": "PROJECT",
+  "description": "Игровое сообщество PROJECT: серверы, привилегии и Steam-профиль.",
+  "lang": "ru",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#d7ebf5",
+  "theme_color": "#1b3b5a",
+  "icons": [
+    {
+      "src": "/assets/images/favicon-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/logo-192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/logo-mark.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

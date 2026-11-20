@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Публикация — PROJECT</title>
+  <meta name="description" content="Публикация журнала PROJECT.">
+  <meta name="theme-color" content="#d7ebf5">
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="/news">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Публикация — PROJECT">
+  <meta property="og:description" content="Журнал проекта PROJECT.">
+  <meta property="og:image" content="/assets/images/og-cover.jpg">
+  <link rel="preload" href="/assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/cards.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+  <script type="module" src="/assets/js/app.js"></script>
+  <script type="module" src="/assets/js/article.js"></script>
+</head>
+<body data-page="article">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <site-header class="site-header-wrap"></site-header>
+
+  <main id="main">
+    <section class="article-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="/">Главная</a>
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg>
+          <a href="/news">Новости</a>
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg>
+          <span id="article-breadcrumb">Публикация</span>
+        </nav>
+        <div id="article-header" class="article-header">
+          <div class="loading-row"><span class="spinner spinner-dark" aria-hidden="true"></span> Загружаем публикацию…</div>
+        </div>
+        <div class="article-cover" id="article-cover" hidden></div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="article-layout">
+        <article class="article-body">
+          <div id="article-content" class="prose" aria-busy="true">
+            <div class="skeleton" style="height:16px;width:90%;margin-bottom:12px"></div>
+            <div class="skeleton" style="height:16px;width:78%;margin-bottom:12px"></div>
+            <div class="skeleton" style="height:16px;width:84%;margin-bottom:12px"></div>
+            <div class="skeleton" style="height:16px;width:62%"></div>
+          </div>
+          <a class="article-back" href="/news">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-left"></use></svg>
+            Все новости
+          </a>
+        </article>
+        <aside class="article-aside" id="article-aside" hidden>
+          <h2>Читайте также</h2>
+          <div class="related-list" id="related-list"></div>
+          <div class="notice notice-demo" style="margin-top:18px">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-newspaper"></use></svg>
+            <span>Публикации ведутся администрацией проекта в единой панели.</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

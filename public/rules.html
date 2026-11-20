@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Правила — PROJECT</title>
+  <meta name="description" content="Правила PROJECT: общие положения, аккаунт и безопасность, общение, игровой процесс, привилегии, наказания и апелляции.">
+  <meta name="theme-color" content="#d7ebf5">
+  <link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32.png">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href="/rules">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Правила — PROJECT">
+  <meta property="og:description" content="Правила игрового сообщества PROJECT: категории, поиск и печатная версия.">
+  <meta property="og:image" content="/assets/images/og-cover.jpg">
+  <link rel="preload" href="/assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/cards.css">
+  <link rel="stylesheet" href="/assets/css/pages.css">
+  <script type="module" src="/assets/js/app.js"></script>
+  <script type="module" src="/assets/js/rules.js"></script>
+</head>
+<body data-page="rules">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+  <site-header class="site-header-wrap"></site-header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <a href="/">Главная</a>
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-chevron-right"></use></svg>
+          <span>Правила</span>
+        </nav>
+        <div class="page-hero-grid">
+          <div>
+            <span class="eyebrow eyebrow-dot">Сообщество</span>
+            <h1>Правила<br><span class="text-gradient">PROJECT</span></h1>
+            <p class="page-hero-lead">
+              Одни правила для всех. Они действуют на сайте, во всех игровых мирах и официальных
+              каналах сообщества. Если что-то неясно — спросите до действия, а не после.
+            </p>
+          </div>
+          <div class="page-hero-aside">
+            <div class="hero-stat-card">
+              <span class="stat-value" data-rules-count>—</span>
+              <span class="stat-label">Пунктов правил</span>
+            </div>
+            <div class="hero-stat-card">
+              <span class="stat-value" data-category-count>—</span>
+              <span class="stat-label">Категорий</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="rules-layout">
+          <aside class="rules-side">
+            <div class="rules-search">
+              <div class="input-wrap">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-search"></use></svg>
+                <input class="input" id="rules-search" type="search" placeholder="Найти пункт правил…" autocomplete="off">
+              </div>
+            </div>
+            <select class="select rules-mobile-select" id="rules-mobile-select" aria-label="Категория правил">
+              <option value="">Все категории</option>
+            </select>
+            <nav class="rules-nav" id="rules-nav" aria-label="Категории правил"></nav>
+            <div class="rules-side-foot">
+              <span class="rules-updated" id="rules-updated">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-clock-3"></use></svg>
+                Загружаем дату…
+              </span>
+              <button class="rules-print" type="button" id="rules-print">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-download"></use></svg>
+                Печатная версия
+              </button>
+              <p class="account-side-note">Правила могут обновляться. Актуальная версия всегда на этой странице.</p>
+            </div>
+          </aside>
+
+          <div class="rules-content">
+            <div class="rules-updated" id="rules-updated-inline">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#i-calendar-days"></use></svg>
+              <span>Загружаем…</span>
+            </div>
+            <div id="rules-content" aria-busy="true">
+              <div class="skeleton" style="height:34px;width:42%;margin-bottom:20px"></div>
+              <div class="skeleton-card skeleton" style="min-height:130px;margin-bottom:12px"></div>
+              <div class="skeleton-card skeleton" style="min-height:130px;margin-bottom:12px"></div>
+              <div class="skeleton-card skeleton" style="min-height:130px"></div>
+            </div>
+            <div class="rules-no-results" id="rules-no-results" hidden>
+              По запросу ничего не найдено. Попробуйте сформулировать иначе.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>
