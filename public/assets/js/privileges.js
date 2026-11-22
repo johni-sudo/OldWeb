@@ -279,6 +279,8 @@ async function loadPrivileges() {
   try {
     const data = await api.get('/api/privileges');
     state.items = data.items || [];
+    const seoFallback = document.querySelector('#seo-privileges-fallback');
+if (seoFallback) seoFallback.hidden = true;
     state.byId = new Map(state.items.map((item) => [Number(item.id), item]));
     state.loaded = true;
     if (grid) grid.setAttribute('aria-busy', 'false');
