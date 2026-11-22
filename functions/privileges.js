@@ -134,7 +134,7 @@ export async function onRequestGet(context) {
 
     const { items = [] } = await apiResponse.json();
 
-    const html = await asset.text();
+    const html = await asset.clone().text();
 
     const fallback = `
       <div id="seo-privileges-fallback">
