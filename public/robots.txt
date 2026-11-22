@@ -4,4 +4,4 @@ Disallow: /admin
 Disallow: /account
 Disallow: /api/
 
-# Add the production sitemap URL here after connecting a custom domain.
+Sitemap: https://oldweb-2ob.pages.dev/sitemap.xml
