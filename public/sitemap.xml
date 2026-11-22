@@ -4,9 +4,21 @@
     <loc>https://oldweb-2ob.pages.dev/</loc>
   </url>
   <url>
-    <loc>https://oldweb-2ob.pages.dev/servers.html</loc>
+    <loc>https://oldweb-2ob.pages.dev/servers</loc>
   </url>
   <url>
-    <loc>https://oldweb-2ob.pages.dev/news.html</loc>
+    <loc>https://oldweb-2ob.pages.dev/news</loc>
+  </url>
+  <url>
+    <loc>https://oldweb-2ob.pages.dev/privileges</loc>
+  </url>
+  <url>
+    <loc>https://oldweb-2ob.pages.dev/rules</loc>
+  </url>
+  <url>
+    <loc>https://oldweb-2ob.pages.dev/privacy</loc>
+  </url>
+  <url>
+    <loc>https://oldweb-2ob.pages.dev/terms</loc>
   </url>
 </urlset>
